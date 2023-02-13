@@ -1,7 +1,7 @@
 
 import './App.css';
 import Index from './components/navbar';
-import Blog from "./bloglist/index"
+import Blog from "./components/bloglist"
 import { useState , useEffect } from 'react';
 function App() {
   const [isLoading, setIsLoading] = useState(true);
