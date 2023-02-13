@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+.title{
+    font-family:Righteous;
+    padding-top: 10px;
+    color: pink;
+    font-size: x-large;
+    padding-bottom: 5px;
+}
+.author{
+    padding-bottom: 5px;
+}
+.body{
+    padding-bottom: 5px;
+}

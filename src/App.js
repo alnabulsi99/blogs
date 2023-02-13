@@ -1,24 +1,52 @@
-import logo from './logo.svg';
-import './App.css';
 
+import './App.css';
+import Index from './components/navbar';
+import Blog from "./bloglist/index"
+import { useState , useEffect } from 'react';
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+  const [blogData, setBlogData] = useState([]);
+  let blogsContent = [
+    {
+      id: 0,
+      author: "Bassam",
+      title: "First Blog",
+      body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. ",
+    },
+    {
+      id: 1,
+      author: "Kareem",
+      title: "Second Blog",
+      body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. ",
+    },
+    {
+      id: 2,
+      author: "Omar",
+      title: "Third Blog",
+      body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. ",
+    },
+    {
+      id: 3,
+      author: "Adham",
+      title: "fourth Blog",
+      body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. ",
+    },
+    
+  ];
+  useEffect(() => {
+    setTimeout(() => {
+      setBlogData(blogsContent);
+      setIsLoading(false);
+    }, 2000);
+  }, []);
+
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    
+    <Index />
+    <Blog data={blogsContent}isLoading={isLoading} />
+  </>
   );
 }
 
